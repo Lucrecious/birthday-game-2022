@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://lut/components/extents.gd" type="Script" id=1]
+[ext_resource path="res://assets/character_tmp.png" type="Texture" id=2]
+[ext_resource path="res://src/components/infinite_runner_jump.gd" type="Script" id=3]
+[ext_resource path="res://lut/components/root_sprite.gd" type="Script" id=4]
+[ext_resource path="res://lut/input/controller.gd" type="Script" id=7]
+[ext_resource path="res://lut/input/button_input.gd" type="Script" id=8]
+[ext_resource path="res://src/platform_mover.gd" type="Script" id=10]
+[ext_resource path="res://src/level_generator.gd" type="Script" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 460, 40 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20, 30 )
+
+[node name="Game" type="Node2D"]
+
+[node name="LevelGenerator" type="Node2D" parent="."]
+script = ExtResource( 12 )
+pixels_per_sec = 200.0
+ground_level = 300.0
+_platform_mover_path = NodePath("../PlatformMover")
+_player_path = NodePath("../Player")
+platform_min_length = 100.0
+platform_spawn_min_msec = 500
+platform_spawn_max_msec = 1500
+
+[node name="Button" type="Button" parent="."]
+margin_right = 170.0
+margin_bottom = 40.0
+text = "Jump"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 0, 300 )
+
+[node name="Collision" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 450, 80 )
+shape = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="Line2D" type="Line2D" parent="Ground"]
+points = PoolVector2Array( 910, 80, -10, 80 )
+width = 80.0
+default_color = Color( 0, 0, 0, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 90, 270 )
+
+[node name="Controller" type="Node" parent="Player"]
+script = ExtResource( 7 )
+
+[node name="ButtonInput" type="Node" parent="Player/Controller"]
+script = ExtResource( 8 )
+actions = PoolStringArray( "jump" )
+
+[node name="RootSprite" type="Node2D" parent="Player"]
+position = Vector2( 0, -5 )
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Player/RootSprite"]
+texture = ExtResource( 2 )
+
+[node name="Collision" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0, 20 )
+shape = SubResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Jump" type="Node2D" parent="Player"]
+script = ExtResource( 3 )
+units = 100.0
+jump_height = 1.5
+gravity_up = 20.0
+gravity_down = 40.0
+coyote_msec = 150
+
+[node name="PlatformMover" type="Node2D" parent="."]
+script = ExtResource( 10 )
