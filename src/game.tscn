@@ -1,39 +1,94 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://lut/components/extents.gd" type="Script" id=1]
-[ext_resource path="res://assets/character_tmp.png" type="Texture" id=2]
-[ext_resource path="res://src/components/infinite_runner_jump.gd" type="Script" id=3]
-[ext_resource path="res://lut/components/root_sprite.gd" type="Script" id=4]
-[ext_resource path="res://lut/input/controller.gd" type="Script" id=7]
-[ext_resource path="res://lut/input/button_input.gd" type="Script" id=8]
-[ext_resource path="res://src/platform_mover.gd" type="Script" id=10]
+[ext_resource path="res://src/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/backgrounds/rocket_league.jpg" type="Texture" id=3]
+[ext_resource path="res://src/hud.gd" type="Script" id=5]
+[ext_resource path="res://src/game.gd" type="Script" id=9]
+[ext_resource path="res://assets/pickups/rack_of_lamb.png" type="Texture" id=10]
+[ext_resource path="res://assets/pickups/pepper.png" type="Texture" id=11]
 [ext_resource path="res://src/level_generator.gd" type="Script" id=12]
+[ext_resource path="res://src/item.tscn" type="PackedScene" id=13]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "scroll_background"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1350, 0 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 460, 40 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 20, 30 )
-
 [node name="Game" type="Node2D"]
+script = ExtResource( 9 )
+_player_path = NodePath("Player")
+
+[node name="LevelAnimations" type="AnimationPlayer" parent="."]
+autoplay = "scroll_background"
+anims/RESET = SubResource( 2 )
+anims/scroll_background = SubResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.509804, 0.380392, 0.329412, 1 )
+scale = Vector2( 4, 2 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( -30, -50 )
 
 [node name="LevelGenerator" type="Node2D" parent="."]
+position = Vector2( -50, 0 )
 script = ExtResource( 12 )
+level_seed = 1
 pixels_per_sec = 200.0
 ground_level = 300.0
-_platform_mover_path = NodePath("../PlatformMover")
+_level_path = NodePath("../Level")
 _player_path = NodePath("../Player")
 platform_min_length = 100.0
 platform_spawn_min_msec = 500
 platform_spawn_max_msec = 1500
 
-[node name="Button" type="Button" parent="."]
-margin_right = 170.0
-margin_bottom = 40.0
-text = "Jump"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="RackOfLamb" parent="LevelGenerator" instance=ExtResource( 13 )]
+visible = false
+points = 85
+
+[node name="Sprite" type="Sprite" parent="LevelGenerator/RackOfLamb"]
+scale = Vector2( 0.258572, 0.258572 )
+texture = ExtResource( 10 )
+
+[node name="Pepper" parent="LevelGenerator" instance=ExtResource( 13 )]
+visible = false
+points = -135
+
+[node name="Sprite" type="Sprite" parent="LevelGenerator/Pepper"]
+position = Vector2( 0.999999, -11 )
+rotation = 0.649226
+scale = Vector2( 0.203283, 0.203283 )
+texture = ExtResource( 11 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 0, 300 )
@@ -51,35 +106,55 @@ joint_mode = 1
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 90, 270 )
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 125, 108 )
 
-[node name="Controller" type="Node" parent="Player"]
-script = ExtResource( 7 )
+[node name="Level" type="Node2D" parent="."]
 
-[node name="ButtonInput" type="Node" parent="Player/Controller"]
-script = ExtResource( 8 )
-actions = PoolStringArray( "jump" )
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 5 )
+_game_path = NodePath("..")
+_score_number_label_path = NodePath("Margin/Control/HBox/ScoreNumber")
 
-[node name="RootSprite" type="Node2D" parent="Player"]
-position = Vector2( 0, -5 )
-script = ExtResource( 4 )
+[node name="Margin" type="MarginContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Sprite" type="Sprite" parent="Player/RootSprite"]
-texture = ExtResource( 2 )
+[node name="Control" type="Control" parent="CanvasLayer/Margin"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 886.0
+margin_bottom = 404.0
+mouse_filter = 2
 
-[node name="Collision" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0, 20 )
-shape = SubResource( 2 )
-script = ExtResource( 1 )
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/Margin/Control"]
+margin_right = 55.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Jump" type="Node2D" parent="Player"]
-script = ExtResource( 3 )
-units = 100.0
-jump_height = 1.5
-gravity_up = 20.0
-gravity_down = 40.0
-coyote_msec = 150
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Margin/Control/HBox"]
+margin_right = 43.0
+margin_bottom = 14.0
+text = "Score: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="PlatformMover" type="Node2D" parent="."]
-script = ExtResource( 10 )
+[node name="ScoreNumber" type="Label" parent="CanvasLayer/Margin/Control/HBox"]
+margin_left = 47.0
+margin_right = 55.0
+margin_bottom = 14.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}

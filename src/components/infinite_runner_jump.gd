@@ -3,6 +3,7 @@ extends Node2D
 
 signal floor_left
 signal floor_hit
+signal vertical_direction_changed
 
 export(float) var units := 1.0
 export(float) var jump_height := 1.0
@@ -17,6 +18,9 @@ onready var _controller := Components.controller(get_parent())
 
 var _on_floor := false
 var _jump_pressed := false
+
+func is_on_floor() -> bool:
+	return _on_floor
 
 func _ready() -> void:
 	_controller.connect('jump_just_pressed', self, '_on_jump_just_pressed')
@@ -60,6 +64,8 @@ func _physics_process(delta: float) -> void:
 	if velocity.y < 0:
 		gravity = gravity_up
 	
+	var previous_velocity := velocity
+	
 	velocity.y += gravity * delta
 	
 	var collider := _body.move_and_collide(velocity * units * delta)
@@ -80,5 +86,8 @@ func _physics_process(delta: float) -> void:
 		if not previous_on_floor and _on_floor:
 			_jump_pressed = false
 			emit_signal('floor_hit')
+	
+	if sign(previous_velocity.y) != sign(velocity.y):
+		emit_signal('vertical_direction_changed')
 	
 	
