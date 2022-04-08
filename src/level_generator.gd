@@ -51,8 +51,12 @@ func _ready() -> void:
 	
 	jump.connect('floor_hit', self, '_player_on_floor_hit')
 	
-	yield(get_tree().create_timer(.5), 'timeout')
+
+func start() -> void:
 	_on_platform_spawn()
+
+func stop() -> void:
+	_platform_spawn_timer.stop()
 
 func _player_on_floor_hit() -> void:
 	var collision_extents := NodE.get_child(_player, CollisionExtents) as CollisionExtents

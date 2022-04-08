@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://lut/components/extents.gd" type="Script" id=1]
 [ext_resource path="res://src/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/backgrounds/rocket_league.jpg" type="Texture" id=3]
 [ext_resource path="res://src/hud.gd" type="Script" id=5]
 [ext_resource path="res://src/game.gd" type="Script" id=9]
 [ext_resource path="res://assets/pickups/rack_of_lamb.png" type="Texture" id=10]
@@ -13,7 +12,7 @@
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Background:position")
+tracks/0/path = NodePath("LevelGenerator:pixels_per_sec")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -22,14 +21,152 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ 200.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LevelGenerator:platform_spawn_min_msec")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 500 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("LevelGenerator:platform_spawn_max_msec")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1500 ]
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "scroll_background"
-length = 60.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Background:position")
+resource_name = "level1"
+length = 68.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("LevelGenerator")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 60.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LevelGenerator:pixels_per_sec")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 200.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("LevelGenerator:platform_spawn_min_msec")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 500 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("LevelGenerator:platform_spawn_max_msec")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1500 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "level2"
+length = 65.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("LevelGenerator")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LevelGenerator:pixels_per_sec")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 400.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("LevelGenerator:platform_spawn_min_msec")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 250 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("LevelGenerator:platform_spawn_max_msec")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 750 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "level3"
+length = 65.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("LevelGenerator")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -37,8 +174,49 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 60 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -1350, 0 ) ]
+"values": [ {
+"args": [  ],
+"method": "start"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LevelGenerator:pixels_per_sec")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 550.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("LevelGenerator:platform_spawn_min_msec")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 200 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("LevelGenerator:platform_spawn_max_msec")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 500 ]
 }
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -47,18 +225,26 @@ extents = Vector2( 460, 40 )
 [node name="Game" type="Node2D"]
 script = ExtResource( 9 )
 _player_path = NodePath("Player")
+_level_generator_path = NodePath("LevelGenerator")
+_level_animations_path = NodePath("LevelAnimations")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -61.0
+margin_top = -71.0
+margin_right = 988.0
+margin_bottom = 473.0
+color = Color( 0.733333, 0.466667, 0.231373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LevelAnimations" type="AnimationPlayer" parent="."]
-autoplay = "scroll_background"
 anims/RESET = SubResource( 2 )
-anims/scroll_background = SubResource( 3 )
-
-[node name="Background" type="Sprite" parent="."]
-modulate = Color( 0.509804, 0.380392, 0.329412, 1 )
-scale = Vector2( 4, 2 )
-texture = ExtResource( 3 )
-centered = false
-offset = Vector2( -30, -50 )
+anims/level1 = SubResource( 3 )
+anims/level2 = SubResource( 4 )
+anims/level3 = SubResource( 5 )
+next/level1 = "level2"
+next/level2 = "level3"
 
 [node name="LevelGenerator" type="Node2D" parent="."]
 position = Vector2( -50, 0 )
@@ -114,7 +300,6 @@ position = Vector2( 125, 108 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 5 )
 _game_path = NodePath("..")
-_score_number_label_path = NodePath("Margin/Control/HBox/ScoreNumber")
 
 [node name="Margin" type="MarginContainer" parent="CanvasLayer"]
 anchor_right = 1.0
@@ -158,3 +343,17 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Center" type="CenterContainer" parent="CanvasLayer/Margin/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tutorial" type="Label" parent="CanvasLayer/Margin/Control/Center"]
+margin_left = 396.0
+margin_top = 190.0
+margin_right = 479.0
+margin_bottom = 204.0
+text = "Click to Jump"
