@@ -125,6 +125,7 @@ func _add_platform(bottom_y: float, top_y: float) -> LinePlatform:
 	platform.height = 25.0
 	platform.length = _random.randf_range(platform_min_length, platform_max_length)
 	platform.position = position
+	platform.color = Color('a4a3d8')
 	
 	_level.add_child(platform)
 	_add_free_conditions(platform)
