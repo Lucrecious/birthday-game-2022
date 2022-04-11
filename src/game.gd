@@ -16,6 +16,8 @@ onready var _player := NodE.get_node_with_error(self, _player_path, Player) as P
 onready var _nick_backgrounds := get_node(_nick_backgrounds_path)
 onready var _stelios_backgrounds := get_node(_stelios_backgrounds_path)
 
+onready var _music := $Music as AudioStreamPlayer
+
 onready var _level_generator := get_node(_level_generator_path)
 onready var _level_animations := NodE.get_node_with_error(
 	self, _level_animations_path, AnimationPlayer
@@ -45,6 +47,8 @@ func _ready() -> void:
 	controller.connect('jump_just_pressed', self, '_on_jump_just_pressed', [], CONNECT_ONESHOT)
 
 func _on_jump_just_pressed() -> void:
+	_music.play()
+	
 	yield(get_tree().create_timer(1.0), 'timeout')
 	_level_animations.play('level1')
 	

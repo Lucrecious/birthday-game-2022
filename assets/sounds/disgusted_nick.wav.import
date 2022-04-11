@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/disgusted_nick.wav-0fbdf08c5477fd338df8c91fb68e80bc.sample"
+
+[deps]
+
+source_file="res://assets/sounds/disgusted_nick.wav"
+dest_files=[ "res://.import/disgusted_nick.wav-0fbdf08c5477fd338df8c91fb68e80bc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

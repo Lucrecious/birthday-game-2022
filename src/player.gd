@@ -11,9 +11,11 @@ func set_mode(mode: int) -> void:
 	if mode == GameMode.Name.Nick:
 		_nick_sprite.visible = true
 		_stelios_sprite.visible = false
+		$Disgusted.set_mode(mode)
 		return
 	
 	if mode == GameMode.Name.Stelios:
 		_nick_sprite.visible = false
 		_stelios_sprite.visible = true
+		$Disgusted.set_mode(mode)
 		return

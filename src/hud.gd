@@ -7,6 +7,9 @@ onready var _score_number_label := $Margin/Control/HBox/ScoreNumber as ScoreLabe
 onready var _tutorial_label := $Margin/Control/Center/Tutorial as Label
 onready var _drunk_shader := $DrunkShader as ColorRect
 
+onready var _good_item_get_sound := $GoodItemGet as AudioStreamPlayer
+onready var _bad_item_get_sound := $BadItemGet as AudioStreamPlayer
+
 func _ready() -> void:
 	_game.connect('points_changed', self, '_on_points_changed')
 	_on_points_changed()
@@ -15,7 +18,14 @@ func _ready() -> void:
 	
 	_game.connect('started', self, '_on_game_started', [], CONNECT_ONESHOT)
 
+var _current_total_points := 0
 func _on_points_changed() -> void:
+	if _game.total_points > _current_total_points:
+		_good_item_get_sound.play()
+	elif _game.total_points < _current_total_points:
+		_bad_item_get_sound.play()
+	
+	_current_total_points = _game.total_points
 	_score_number_label.set_score(_game.total_points)
 
 func _on_game_started() -> void:
