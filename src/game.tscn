@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://lut/components/extents.gd" type="Script" id=1]
 [ext_resource path="res://src/player.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://assets/pickups/slimything.png" type="Texture" id=18]
 [ext_resource path="res://assets/pickups/olive.png" type="Texture" id=19]
 [ext_resource path="res://assets/pickups/kraken.png" type="Texture" id=20]
+[ext_resource path="res://assets/ui/Kenney Blocks.ttf" type="DynamicFontData" id=21]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -474,6 +475,13 @@ tracks/5/keys = {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 460, 40 )
 
+[sub_resource type="DynamicFont" id=8]
+size = 32
+font_data = ExtResource( 21 )
+
+[sub_resource type="Theme" id=9]
+Label/fonts/font = SubResource( 8 )
+
 [sub_resource type="Shader" id=6]
 code = "shader_type canvas_item;
 
@@ -633,10 +641,20 @@ points = 89
 scale = Vector2( 0.258572, 0.258572 )
 texture = ExtResource( 10 )
 
+[node name="Calamari" parent="LevelGenerator/Nick" instance=ExtResource( 13 )]
+visible = false
+position = Vector2( -50, 0 )
+points = 177
+
+[node name="Sprite" type="Sprite" parent="LevelGenerator/Nick/Calamari"]
+position = Vector2( -1, 1 )
+scale = Vector2( 0.247659, 0.247659 )
+texture = ExtResource( 15 )
+
 [node name="Pepper" parent="LevelGenerator/Nick" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( -50, 0 )
-points = -137
+points = -273
 
 [node name="Sprite" type="Sprite" parent="LevelGenerator/Nick/Pepper"]
 position = Vector2( 0.999999, -11 )
@@ -647,22 +665,12 @@ texture = ExtResource( 11 )
 [node name="Foot" parent="LevelGenerator/Nick" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( -50, 0 )
-points = -226
+points = -451
 
 [node name="Sprite" type="Sprite" parent="LevelGenerator/Nick/Foot"]
 position = Vector2( -2, -8 )
 scale = Vector2( 0.0974839, 0.0974839 )
 texture = ExtResource( 14 )
-
-[node name="Calamari" parent="LevelGenerator/Nick" instance=ExtResource( 13 )]
-visible = false
-position = Vector2( -50, 0 )
-points = 177
-
-[node name="Sprite" type="Sprite" parent="LevelGenerator/Nick/Calamari"]
-position = Vector2( -1, 1 )
-scale = Vector2( 0.247659, 0.247659 )
-texture = ExtResource( 15 )
 
 [node name="Stelios" type="Node2D" parent="LevelGenerator"]
 position = Vector2( 50, 0 )
@@ -690,7 +698,7 @@ texture = ExtResource( 17 )
 [node name="Olive" parent="LevelGenerator/Stelios" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( -50, 0 )
-points = -226
+points = -451
 
 [node name="Sprite" type="Sprite" parent="LevelGenerator/Stelios/Olive"]
 position = Vector2( -1.52588e-05, 0 )
@@ -700,7 +708,7 @@ texture = ExtResource( 19 )
 [node name="Slime" parent="LevelGenerator/Stelios" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( -50, 0 )
-points = -149
+points = -297
 
 [node name="Sprite" type="Sprite" parent="LevelGenerator/Stelios/Slime"]
 position = Vector2( 1, -1 )
@@ -711,7 +719,7 @@ texture = ExtResource( 18 )
 visible = false
 position = Vector2( -50, 0 )
 type = 1
-points = 420
+points = 69
 
 [node name="Sprite" type="Sprite" parent="LevelGenerator/Kraken"]
 position = Vector2( 0, 6 )
@@ -747,18 +755,19 @@ _game_path = NodePath("..")
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-custom_constants/margin_right = 10
+theme = SubResource( 9 )
+custom_constants/margin_right = 20
 custom_constants/margin_top = 10
-custom_constants/margin_left = 10
+custom_constants/margin_left = 20
 custom_constants/margin_bottom = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Control" type="Control" parent="CanvasLayer/Margin"]
-margin_left = 10.0
+margin_left = 20.0
 margin_top = 10.0
-margin_right = 886.0
+margin_right = 876.0
 margin_bottom = 404.0
 mouse_filter = 2
 
@@ -770,17 +779,17 @@ __meta__ = {
 }
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer/Margin/Control/HBox"]
-margin_right = 43.0
-margin_bottom = 14.0
+margin_right = 144.0
+margin_bottom = 48.0
 text = "Score: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScoreNumber" type="Label" parent="CanvasLayer/Margin/Control/HBox"]
-margin_left = 47.0
-margin_right = 55.0
-margin_bottom = 14.0
+margin_left = 148.0
+margin_right = 172.0
+margin_bottom = 48.0
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -794,10 +803,10 @@ __meta__ = {
 }
 
 [node name="Tutorial" type="Label" parent="CanvasLayer/Margin/Control/Center"]
-margin_left = 396.0
-margin_top = 190.0
-margin_right = 479.0
-margin_bottom = 204.0
+margin_left = 284.0
+margin_top = 173.0
+margin_right = 572.0
+margin_bottom = 221.0
 text = "Click to Jump"
 
 [node name="DrunkShader" type="ColorRect" parent="CanvasLayer"]
