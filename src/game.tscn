@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://lut/components/extents.gd" type="Script" id=1]
 [ext_resource path="res://src/player.tscn" type="PackedScene" id=2]
@@ -6,11 +6,20 @@
 [ext_resource path="res://assets/backgrounds/duck_game.jpg" type="Texture" id=4]
 [ext_resource path="res://src/hud.gd" type="Script" id=5]
 [ext_resource path="res://assets/backgrounds/party.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/backgrounds/music_studio.jpg" type="Texture" id=7]
+[ext_resource path="res://assets/backgrounds/concert.jpg" type="Texture" id=8]
 [ext_resource path="res://src/game.gd" type="Script" id=9]
 [ext_resource path="res://assets/pickups/rack_of_lamb.png" type="Texture" id=10]
 [ext_resource path="res://assets/pickups/pepper.png" type="Texture" id=11]
 [ext_resource path="res://src/level_generator.gd" type="Script" id=12]
 [ext_resource path="res://src/item.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/pickups/foot.png" type="Texture" id=14]
+[ext_resource path="res://assets/pickups/calamari.png" type="Texture" id=15]
+[ext_resource path="res://assets/pickups/pick.png" type="Texture" id=16]
+[ext_resource path="res://assets/pickups/schnitzel.png" type="Texture" id=17]
+[ext_resource path="res://assets/pickups/slimything.png" type="Texture" id=18]
+[ext_resource path="res://assets/pickups/olive.png" type="Texture" id=19]
+[ext_resource path="res://assets/pickups/kraken.png" type="Texture" id=20]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -51,7 +60,7 @@ tracks/2/keys = {
 "values": [ 1500 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Backgrounds/RocketLeague:modulate")
+tracks/3/path = NodePath("Backgrounds/Nick/RocketLeague:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -63,7 +72,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Backgrounds/RocketLeague:position")
+tracks/4/path = NodePath("Backgrounds/Nick/RocketLeague:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -75,7 +84,7 @@ tracks/4/keys = {
 "values": [ Vector2( 1056, 233 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Backgrounds/DuckGame:modulate")
+tracks/5/path = NodePath("Backgrounds/Nick/DuckGame:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -87,7 +96,7 @@ tracks/5/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Backgrounds/DuckGame:position")
+tracks/6/path = NodePath("Backgrounds/Nick/DuckGame:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -122,6 +131,54 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Backgrounds/Stelios/Studio:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1148.96, 206 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Backgrounds/Stelios/Studio:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Backgrounds/Stelios/Concert:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Backgrounds/Stelios/Concert:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1388.87, 135 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "level1"
@@ -133,7 +190,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1, 60.1 ),
+"times": PoolRealArray( 0, 60 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -180,7 +237,7 @@ tracks/3/keys = {
 "values": [ 1500 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Backgrounds/RocketLeague:modulate")
+tracks/4/path = NodePath("Backgrounds/Nick/RocketLeague:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -192,7 +249,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Backgrounds/RocketLeague:position")
+tracks/5/path = NodePath("Backgrounds/Nick/RocketLeague:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -202,6 +259,30 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1056, 233 ), Vector2( -247, 233 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Backgrounds/Stelios/Studio:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1148.96, 206 ), Vector2( -245, 206 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Backgrounds/Stelios/Studio:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1, 60, 61 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -261,7 +342,7 @@ tracks/3/keys = {
 "values": [ 750 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Backgrounds/DuckGame:modulate")
+tracks/4/path = NodePath("Backgrounds/Nick/DuckGame:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -273,7 +354,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Backgrounds/DuckGame:position")
+tracks/5/path = NodePath("Backgrounds/Nick/DuckGame:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -283,6 +364,30 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1968.3, 136 ), Vector2( -1063, 136 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Backgrounds/Stelios/Concert:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1, 60, 61 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Backgrounds/Stelios/Concert:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1388.87, 135 ), Vector2( -491, 135 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -369,9 +474,78 @@ tracks/5/keys = {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 460, 40 )
 
+[sub_resource type="Shader" id=6]
+code = "shader_type canvas_item;
+
+uniform vec2 sprite_scale;
+uniform float scale_x = 0.67;
+
+float rand(vec2 coord){
+	return fract(sin(dot(coord, vec2(12.9898, 78.233)))* 43758.5453123);
+}
+
+float noise(vec2 coord){
+	vec2 i = floor(coord);
+	vec2 f = fract(coord);
+
+	// 4 corners of a rectangle surrounding our point
+	float a = rand(i);
+	float b = rand(i + vec2(1.0, 0.0));
+	float c = rand(i + vec2(0.0, 1.0));
+	float d = rand(i + vec2(1.0, 1.0));
+
+	vec2 cubic = f * f * (3.0 - 2.0 * f);
+
+	return mix(a, b, cubic.x) + (c - a) * cubic.y * (1.0 - cubic.x) + (d - b) * cubic.x * cubic.y;
+}
+
+void fragment(){
+	
+	vec2 noisecoord1 = UV * sprite_scale * scale_x;
+	vec2 noisecoord2 = UV * sprite_scale * scale_x + 4.0;
+	
+	vec2 motion1 = vec2(TIME * 0.3, TIME * -0.4);
+	vec2 motion2 = vec2(TIME * 0.1, TIME * 0.5);
+	
+	vec2 distort1 = vec2(noise(noisecoord1 + motion1), noise(noisecoord2 + motion1)) - vec2(0.5);
+	vec2 distort2 = vec2(noise(noisecoord1 + motion2), noise(noisecoord2 + motion2)) - vec2(0.5);
+	
+	vec2 distort_sum = (distort1 + distort2) / 60.0;
+	
+	vec4 color = textureLod(SCREEN_TEXTURE, SCREEN_UV + distort_sum, 0.0);
+	
+	color.rgb = mix(vec3(0.5), color.rgb, 1.4);
+	
+	float near_top = (UV.y + distort_sum.y) / (0.2 / sprite_scale.y);
+	near_top = clamp(near_top, 0.0, 1.0);
+	near_top = 1.0 - near_top;
+	
+	color = mix(color, vec4(1.0), near_top);
+	
+	float edge_lower = 0.6;
+	float edge_upper = edge_lower + 0.1;
+	
+	if(near_top > edge_lower){
+		color.a = 0.0;
+		
+		if(near_top < edge_upper){
+			color.a = (edge_upper - near_top) / (edge_upper - edge_lower);
+		}
+	}
+	
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = SubResource( 6 )
+shader_param/sprite_scale = Vector2( 0, 0 )
+shader_param/scale_x = 0.5
+
 [node name="Game" type="Node2D"]
 script = ExtResource( 9 )
 _player_path = NodePath("Player")
+_nick_backgrounds_path = NodePath("Backgrounds/Nick")
+_stelios_backgrounds_path = NodePath("Backgrounds/Stelios")
 _level_generator_path = NodePath("LevelGenerator")
 _level_animations_path = NodePath("LevelAnimations")
 
@@ -388,19 +562,37 @@ __meta__ = {
 
 [node name="Backgrounds" type="Node2D" parent="."]
 
-[node name="RocketLeague" type="Sprite" parent="Backgrounds"]
+[node name="Nick" type="Node2D" parent="Backgrounds"]
+
+[node name="RocketLeague" type="Sprite" parent="Backgrounds/Nick"]
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
 position = Vector2( 1056, 233 )
 scale = Vector2( 3.94667, 2.1037 )
 texture = ExtResource( 3 )
 
-[node name="DuckGame" type="Sprite" parent="Backgrounds"]
+[node name="DuckGame" type="Sprite" parent="Backgrounds/Nick"]
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
 position = Vector2( 1658, 165 )
 scale = Vector2( 3.20109, 0.9375 )
 texture = ExtResource( 4 )
+
+[node name="Stelios" type="Node2D" parent="Backgrounds"]
+
+[node name="Studio" type="Sprite" parent="Backgrounds/Stelios"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0.27451, 0.27451, 0.27451, 1 )
+position = Vector2( 1148.96, 206 )
+scale = Vector2( 1.85162, 0.573548 )
+texture = ExtResource( 7 )
+
+[node name="Concert" type="Sprite" parent="Backgrounds/Stelios"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+position = Vector2( 1388.87, 135 )
+scale = Vector2( 2.23771, 0.628538 )
+texture = ExtResource( 8 )
 
 [node name="Party" type="Sprite" parent="Backgrounds"]
 modulate = Color( 1, 1, 1, 0 )
@@ -429,23 +621,102 @@ platform_min_length = 100.0
 platform_spawn_min_msec = 500
 platform_spawn_max_msec = 1500
 
-[node name="RackOfLamb" parent="LevelGenerator" instance=ExtResource( 13 )]
-visible = false
-points = 85
+[node name="Nick" type="Node2D" parent="LevelGenerator"]
+position = Vector2( 50, 0 )
 
-[node name="Sprite" type="Sprite" parent="LevelGenerator/RackOfLamb"]
+[node name="RackOfLamb" parent="LevelGenerator/Nick" instance=ExtResource( 13 )]
+visible = false
+position = Vector2( -50, 0 )
+points = 89
+
+[node name="Sprite" type="Sprite" parent="LevelGenerator/Nick/RackOfLamb"]
 scale = Vector2( 0.258572, 0.258572 )
 texture = ExtResource( 10 )
 
-[node name="Pepper" parent="LevelGenerator" instance=ExtResource( 13 )]
+[node name="Pepper" parent="LevelGenerator/Nick" instance=ExtResource( 13 )]
 visible = false
-points = -135
+position = Vector2( -50, 0 )
+points = -137
 
-[node name="Sprite" type="Sprite" parent="LevelGenerator/Pepper"]
+[node name="Sprite" type="Sprite" parent="LevelGenerator/Nick/Pepper"]
 position = Vector2( 0.999999, -11 )
 rotation = 0.649226
 scale = Vector2( 0.203283, 0.203283 )
 texture = ExtResource( 11 )
+
+[node name="Foot" parent="LevelGenerator/Nick" instance=ExtResource( 13 )]
+visible = false
+position = Vector2( -50, 0 )
+points = -226
+
+[node name="Sprite" type="Sprite" parent="LevelGenerator/Nick/Foot"]
+position = Vector2( -2, -8 )
+scale = Vector2( 0.0974839, 0.0974839 )
+texture = ExtResource( 14 )
+
+[node name="Calamari" parent="LevelGenerator/Nick" instance=ExtResource( 13 )]
+visible = false
+position = Vector2( -50, 0 )
+points = 177
+
+[node name="Sprite" type="Sprite" parent="LevelGenerator/Nick/Calamari"]
+position = Vector2( -1, 1 )
+scale = Vector2( 0.247659, 0.247659 )
+texture = ExtResource( 15 )
+
+[node name="Stelios" type="Node2D" parent="LevelGenerator"]
+position = Vector2( 50, 0 )
+
+[node name="Pick" parent="LevelGenerator/Stelios" instance=ExtResource( 13 )]
+visible = false
+position = Vector2( -50, 0 )
+points = 69
+
+[node name="Sprite" type="Sprite" parent="LevelGenerator/Stelios/Pick"]
+position = Vector2( 1, 4.76837e-07 )
+scale = Vector2( 0.188607, 0.188607 )
+texture = ExtResource( 16 )
+
+[node name="Schnitzel" parent="LevelGenerator/Stelios" instance=ExtResource( 13 )]
+visible = false
+position = Vector2( -50, 0 )
+points = 164
+
+[node name="Sprite" type="Sprite" parent="LevelGenerator/Stelios/Schnitzel"]
+position = Vector2( -1.52588e-05, 4.76837e-07 )
+scale = Vector2( 0.265035, 0.265035 )
+texture = ExtResource( 17 )
+
+[node name="Olive" parent="LevelGenerator/Stelios" instance=ExtResource( 13 )]
+visible = false
+position = Vector2( -50, 0 )
+points = -226
+
+[node name="Sprite" type="Sprite" parent="LevelGenerator/Stelios/Olive"]
+position = Vector2( -1.52588e-05, 0 )
+scale = Vector2( 0.225157, 0.225157 )
+texture = ExtResource( 19 )
+
+[node name="Slime" parent="LevelGenerator/Stelios" instance=ExtResource( 13 )]
+visible = false
+position = Vector2( -50, 0 )
+points = -149
+
+[node name="Sprite" type="Sprite" parent="LevelGenerator/Stelios/Slime"]
+position = Vector2( 1, -1 )
+scale = Vector2( 0.218433, 0.218433 )
+texture = ExtResource( 18 )
+
+[node name="Kraken" parent="LevelGenerator" instance=ExtResource( 13 )]
+visible = false
+position = Vector2( -50, 0 )
+type = 1
+points = 420
+
+[node name="Sprite" type="Sprite" parent="LevelGenerator/Kraken"]
+position = Vector2( 0, 6 )
+scale = Vector2( 0.410093, 0.410093 )
+texture = ExtResource( 20 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 0, 300 )
@@ -528,3 +799,12 @@ margin_top = 190.0
 margin_right = 479.0
 margin_bottom = 204.0
 text = "Click to Jump"
+
+[node name="DrunkShader" type="ColorRect" parent="CanvasLayer"]
+material = SubResource( 7 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

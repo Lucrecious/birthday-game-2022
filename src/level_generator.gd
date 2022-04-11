@@ -41,16 +41,25 @@ func _ready() -> void:
 	var jump := NodE.get_child(_player, InfiniteRunnerJump) as InfiniteRunnerJump
 	assert(jump)
 	
-	for item in NodE.get_children(self, PickUpItem):
+	jump.connect('floor_hit', self, '_player_on_floor_hit')
+
+func init_mode(mode: int) -> void:
+	var node: Node = null
+	if mode == GameMode.Name.Nick:
+		node = $Nick
+	elif mode == GameMode.Name.Stelios:
+		node = $Stelios
+	
+	if node == null:
+		return
+	
+	for item in NodE.get_children(node, PickUpItem) + NodE.get_children(self, PickUpItem):
 		NodE.set_owner_recursive(item, item)
 		var packed_scene := PackedScene.new()
 		item.visible = true
 		packed_scene.pack(item)
 		item.visible = false
 		_possible_spawn_items.push_back(packed_scene)
-	
-	jump.connect('floor_hit', self, '_player_on_floor_hit')
-	
 
 func start() -> void:
 	_on_platform_spawn()

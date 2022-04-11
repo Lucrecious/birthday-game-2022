@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://lut/input/button_input.gd" type="Script" id=1]
 [ext_resource path="res://lut/input/controller.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://assets/character/jump_fall_strip1.png" type="Texture" id=10]
 [ext_resource path="res://assets/character/jump_mid_strip1.png" type="Texture" id=11]
 [ext_resource path="res://assets/heads/nick.png" type="Texture" id=12]
+[ext_resource path="res://assets/heads/stelios1.png" type="Texture" id=13]
+[ext_resource path="res://src/player.gd" type="Script" id=14]
 
 [sub_resource type="Animation" id=13]
 length = 0.001
@@ -296,6 +298,9 @@ extents = Vector2( 20, 30 )
 radius = 31.0161
 
 [node name="Player" type="KinematicBody2D"]
+script = ExtResource( 14 )
+_nick_sprite_path = NodePath("RootSprite/Sprite/HeadPosition/NickHead")
+_stelios_sprite_path = NodePath("RootSprite/Sprite/HeadPosition/SteliosHead")
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 13 )
@@ -326,11 +331,17 @@ animation = "run"
 [node name="HeadPosition" type="Position2D" parent="RootSprite/Sprite"]
 position = Vector2( 3.5, 11.5 )
 
-[node name="Head" type="Sprite" parent="RootSprite/Sprite/HeadPosition"]
+[node name="NickHead" type="Sprite" parent="RootSprite/Sprite/HeadPosition"]
 position = Vector2( 2, -6.5 )
 rotation = 0.0342102
 scale = Vector2( 0.0469957, 0.0469957 )
 texture = ExtResource( 12 )
+
+[node name="SteliosHead" type="Sprite" parent="RootSprite/Sprite/HeadPosition"]
+position = Vector2( 3, -9 )
+rotation = 0.0342102
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 13 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 visible = false
