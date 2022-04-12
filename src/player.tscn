@@ -338,6 +338,7 @@ extents = Vector2( 20, 30 )
 radius = 31.0161
 
 [node name="Player" type="KinematicBody2D"]
+collision_layer = 5
 script = ExtResource( 14 )
 _nick_sprite_path = NodePath("RootSprite/Sprite/HeadPosition/NickHead")
 _stelios_sprite_path = NodePath("RootSprite/Sprite/HeadPosition/SteliosHead")

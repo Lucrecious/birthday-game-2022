@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/ui/theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/start.gd" type="Script" id=2]
+[ext_resource path="res://assets/heads/nick.png" type="Texture" id=3]
+[ext_resource path="res://assets/heads/stelios1.png" type="Texture" id=4]
+
+[node name="Start" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = 2.0
+theme = ExtResource( 1 )
+color = Color( 0.0745098, 0.101961, 0.168627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 70
+custom_constants/margin_top = 50
+custom_constants/margin_left = 70
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Background/Margin"]
+margin_left = 70.0
+margin_top = 50.0
+margin_right = 826.0
+margin_bottom = 364.0
+
+[node name="Starts" type="HBoxContainer" parent="Background/Margin/Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nick" type="ToolButton" parent="Background/Margin/Control/Starts"]
+margin_right = 96.0
+margin_bottom = 48.0
+text = "Nick"
+
+[node name="Space" type="Control" parent="Background/Margin/Control/Starts"]
+margin_left = 100.0
+margin_right = 584.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+
+[node name="Stelios" type="ToolButton" parent="Background/Margin/Control/Starts"]
+margin_left = 588.0
+margin_right = 756.0
+margin_bottom = 48.0
+text = "Stelios"
+
+[node name="Nick" type="Sprite" parent="Background/Margin/Control"]
+position = Vector2( 56, 178 )
+scale = Vector2( 0.35307, 0.35307 )
+texture = ExtResource( 3 )
+
+[node name="Stelios" type="Sprite" parent="Background/Margin/Control"]
+position = Vector2( 669, 180 )
+scale = Vector2( 0.511086, 0.511086 )
+texture = ExtResource( 4 )
+
+[node name="Center" type="CenterContainer" parent="Background/Margin/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 140.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Countdown" type="Label" parent="Background/Margin/Control/Center"]
+margin_left = 366.0
+margin_top = 63.0
+margin_right = 390.0
+margin_bottom = 111.0
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeOut" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

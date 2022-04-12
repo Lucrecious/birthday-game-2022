@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/justin_stelios.wav-023cc061248cacb2a31f5b8cfe7c8e9a.sample"
+
+[deps]
+
+source_file="res://assets/hbd_voice_overs/justin_stelios.wav"
+dest_files=[ "res://.import/justin_stelios.wav-023cc061248cacb2a31f5b8cfe7c8e9a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
