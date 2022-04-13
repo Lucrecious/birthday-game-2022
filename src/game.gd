@@ -11,6 +11,7 @@ export(NodePath) var _nick_backgrounds_path := NodePath()
 export(NodePath) var _stelios_backgrounds_path := NodePath()
 export(NodePath) var _level_generator_path := NodePath()
 export(NodePath) var _level_animations_path := NodePath()
+export(NodePath) var _birthday_dudes_path := NodePath()
 
 onready var _player := NodE.get_node_with_error(self, _player_path, Player) as Player
 onready var _nick_backgrounds := get_node(_nick_backgrounds_path)
@@ -22,6 +23,8 @@ onready var _level_generator := get_node(_level_generator_path)
 onready var _level_animations := NodE.get_node_with_error(
 	self, _level_animations_path, AnimationPlayer
 ) as AnimationPlayer
+
+onready var _birthday_dudes := NodE.get_node_with_error(self, _birthday_dudes_path, Node2D) as Node2D
 
 var total_points := 0
 
@@ -37,6 +40,8 @@ func _ready() -> void:
 		ObjEct.group_call(_stelios_backgrounds.get_children(), 'set', ['visible', true])
 	
 	_level_generator.init_mode(mode)
+	
+	_birthday_dudes.init_mode(mode)
 	
 	var item_pickup := NodE.get_child(_player, ItemPickUp) as ItemPickUp
 	assert(item_pickup)

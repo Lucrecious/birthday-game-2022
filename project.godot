@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "BirthdayDude",
+"language": "GDScript",
+"path": "res://src/birthday_dude.gd"
+}, {
 "base": "IButtonInput",
 "class": "ButtonInput",
 "language": "GDScript",
@@ -315,6 +320,7 @@ _global_script_classes=[ {
 "path": "res://lut/components_3d/velocity3.gd"
 } ]
 _global_script_class_icons={
+"BirthdayDude": "",
 "ButtonInput": "",
 "Camera3Pivot": "",
 "CanvasItEm": "",

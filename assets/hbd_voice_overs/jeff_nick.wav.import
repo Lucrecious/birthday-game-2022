@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/jeff_nick.wav-307ecf9dc638a3871404a4efc1d3cc5d.sample"
+
+[deps]
+
+source_file="res://assets/hbd_voice_overs/jeff_nick.wav"
+dest_files=[ "res://.import/jeff_nick.wav-307ecf9dc638a3871404a4efc1d3cc5d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

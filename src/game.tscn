@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://lut/components/extents.gd" type="Script" id=1]
 [ext_resource path="res://src/player.tscn" type="PackedScene" id=2]
@@ -27,7 +27,44 @@
 [ext_resource path="res://assets/music/running_music.mp3" type="AudioStream" id=25]
 [ext_resource path="res://src/birthday_dude.tscn" type="PackedScene" id=26]
 [ext_resource path="res://assets/heads/justin.png" type="Texture" id=27]
-[ext_resource path="res://assets/hbd_voice_overs/justin_stelios.wav" type="AudioStream" id=28]
+[ext_resource path="res://assets/hbd_voice_overs/justin_nick.wav" type="AudioStream" id=28]
+[ext_resource path="res://assets/hbd_voice_overs/justin_stelios.wav" type="AudioStream" id=29]
+[ext_resource path="res://src/birthday_dudes.gd" type="Script" id=30]
+[ext_resource path="res://assets/heads/abu.png" type="Texture" id=31]
+[ext_resource path="res://assets/heads/angela.png" type="Texture" id=32]
+[ext_resource path="res://assets/heads/anish.png" type="Texture" id=33]
+[ext_resource path="res://assets/heads/emmy.png" type="Texture" id=34]
+[ext_resource path="res://assets/heads/elias.png" type="Texture" id=35]
+[ext_resource path="res://assets/heads/irene.png" type="Texture" id=36]
+[ext_resource path="res://assets/heads/jake.png" type="Texture" id=37]
+[ext_resource path="res://assets/heads/jeff.png" type="Texture" id=38]
+[ext_resource path="res://assets/heads/maria.png" type="Texture" id=39]
+[ext_resource path="res://assets/heads/mark.png" type="Texture" id=40]
+[ext_resource path="res://assets/heads/max.png" type="Texture" id=41]
+[ext_resource path="res://assets/heads/mercedes.png" type="Texture" id=42]
+[ext_resource path="res://assets/hbd_voice_overs/irene_stelios.wav" type="AudioStream" id=43]
+[ext_resource path="res://assets/hbd_voice_overs/abu_stelios.wav" type="AudioStream" id=44]
+[ext_resource path="res://assets/hbd_voice_overs/emmy_nick.wav" type="AudioStream" id=45]
+[ext_resource path="res://assets/hbd_voice_overs/angela_nickstelios1.wav" type="AudioStream" id=46]
+[ext_resource path="res://assets/hbd_voice_overs/angela_nickstelios2.wav" type="AudioStream" id=47]
+[ext_resource path="res://assets/hbd_voice_overs/emmy_stelios.wav" type="AudioStream" id=48]
+[ext_resource path="res://assets/hbd_voice_overs/irene_nick.wav" type="AudioStream" id=49]
+[ext_resource path="res://assets/hbd_voice_overs/abu_nick.wav" type="AudioStream" id=50]
+[ext_resource path="res://assets/hbd_voice_overs/anish_stelios.wav" type="AudioStream" id=51]
+[ext_resource path="res://assets/hbd_voice_overs/elias_stelios.wav" type="AudioStream" id=52]
+[ext_resource path="res://assets/hbd_voice_overs/anish_nick.wav" type="AudioStream" id=53]
+[ext_resource path="res://assets/hbd_voice_overs/elias_nick.wav" type="AudioStream" id=54]
+[ext_resource path="res://assets/hbd_voice_overs/mercedes_stelios.wav" type="AudioStream" id=55]
+[ext_resource path="res://assets/hbd_voice_overs/mercedes_nick.wav" type="AudioStream" id=56]
+[ext_resource path="res://assets/hbd_voice_overs/jake_nick.wav" type="AudioStream" id=57]
+[ext_resource path="res://assets/hbd_voice_overs/maria_stelios.wav" type="AudioStream" id=58]
+[ext_resource path="res://assets/hbd_voice_overs/maria_nick.wav" type="AudioStream" id=59]
+[ext_resource path="res://assets/hbd_voice_overs/mark_stelios.wav" type="AudioStream" id=60]
+[ext_resource path="res://assets/hbd_voice_overs/jake_stelios.wav" type="AudioStream" id=61]
+[ext_resource path="res://assets/hbd_voice_overs/mark_nick.wav" type="AudioStream" id=62]
+[ext_resource path="res://assets/hbd_voice_overs/max_nickstelios.wav" type="AudioStream" id=63]
+[ext_resource path="res://assets/hbd_voice_overs/jeff_nick.wav" type="AudioStream" id=64]
+[ext_resource path="res://assets/hbd_voice_overs/jeff_stelios.wav" type="AudioStream" id=65]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -187,6 +224,30 @@ tracks/12/keys = {
 "update": 0,
 "values": [ Vector2( 1388.87, 135 ) ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("BirthdayDudes:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 557, 12 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Music:volume_db")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -7.0 ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "level1"
@@ -291,6 +352,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Music:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -397,6 +470,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [ Vector2( 1388.87, 135 ), Vector2( -491, 135 ) ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Music:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "level3"
@@ -477,6 +562,46 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Music:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "level4"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("BirthdayDudes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 90 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 557, 12 ), Vector2( -4747, 12 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Music:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -7.0 ]
 }
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -586,9 +711,11 @@ _nick_backgrounds_path = NodePath("Backgrounds/Nick")
 _stelios_backgrounds_path = NodePath("Backgrounds/Stelios")
 _level_generator_path = NodePath("LevelGenerator")
 _level_animations_path = NodePath("LevelAnimations")
+_birthday_dudes_path = NodePath("BirthdayDudes")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
+volume_db = -7.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -61.0
@@ -647,8 +774,10 @@ anims/RESET = SubResource( 2 )
 anims/level1 = SubResource( 3 )
 anims/level2 = SubResource( 4 )
 anims/level3 = SubResource( 5 )
+anims/level4 = SubResource( 10 )
 next/level1 = "level2"
 next/level2 = "level3"
+next/level3 = "level4"
 
 [node name="LevelGenerator" type="Node2D" parent="."]
 position = Vector2( -50, 0 )
@@ -778,20 +907,157 @@ end_cap_mode = 2
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 125, 292 )
 
-[node name="Level" type="Node2D" parent="."]
+[node name="BirthdayDudes" type="Node2D" parent="."]
+position = Vector2( 557, 12 )
+script = ExtResource( 30 )
 
-[node name="Justin" parent="Level" instance=ExtResource( 26 )]
-position = Vector2( 577, -165 )
+[node name="Justin" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 432, 270 )
+_nick = ExtResource( 28 )
+_stelios = ExtResource( 29 )
 
-[node name="Head" type="Sprite" parent="Level/Justin"]
+[node name="Head" type="Sprite" parent="BirthdayDudes/Justin"]
 position = Vector2( 2, -16 )
 rotation = -0.274017
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 27 )
 flip_h = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level/Justin"]
-stream = ExtResource( 28 )
+[node name="Abu" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 748, 270 )
+_nick = ExtResource( 50 )
+_stelios = ExtResource( 44 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Abu"]
+position = Vector2( 1, -24 )
+rotation = 0.00755367
+scale = Vector2( 0.116634, 0.116634 )
+texture = ExtResource( 31 )
+flip_h = true
+
+[node name="Angela" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 1034, 270 )
+_nick = ExtResource( 46 )
+_stelios = ExtResource( 47 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Angela"]
+position = Vector2( -1, -20 )
+rotation = 0.00755367
+scale = Vector2( 0.288038, 0.288038 )
+texture = ExtResource( 32 )
+flip_h = true
+
+[node name="Anish" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 1283, 270 )
+_nick = ExtResource( 53 )
+_stelios = ExtResource( 51 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Anish"]
+position = Vector2( -1, -20 )
+rotation = 0.00755367
+scale = Vector2( 0.180416, 0.180416 )
+texture = ExtResource( 33 )
+
+[node name="Elias" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 2404, 270 )
+_nick = ExtResource( 54 )
+_stelios = ExtResource( 52 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Elias"]
+position = Vector2( -1, -20 )
+rotation = 0.00755367
+scale = Vector2( 0.180416, 0.180416 )
+texture = ExtResource( 35 )
+
+[node name="Emmy" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 2622, 270 )
+_nick = ExtResource( 45 )
+_stelios = ExtResource( 48 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Emmy"]
+position = Vector2( -1, -24 )
+rotation = 0.00755367
+scale = Vector2( 0.130469, 0.130469 )
+texture = ExtResource( 34 )
+
+[node name="Irene" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 2845, 270 )
+_nick = ExtResource( 49 )
+_stelios = ExtResource( 43 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Irene"]
+position = Vector2( -1, -17 )
+rotation = 0.00755367
+scale = Vector2( 0.236904, 0.236904 )
+texture = ExtResource( 36 )
+
+[node name="Jake" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 3047, 268 )
+_nick = ExtResource( 57 )
+_stelios = ExtResource( 61 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Jake"]
+position = Vector2( -1, -23 )
+rotation = 0.00755367
+scale = Vector2( 0.271705, 0.271705 )
+texture = ExtResource( 37 )
+
+[node name="Jeff" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 3265, 268 )
+_nick = ExtResource( 64 )
+_stelios = ExtResource( 65 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Jeff"]
+position = Vector2( 7, -23 )
+rotation = 0.00755367
+scale = Vector2( 0.164874, 0.164874 )
+texture = ExtResource( 38 )
+
+[node name="Maria" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 3492, 268 )
+_nick = ExtResource( 59 )
+_stelios = ExtResource( 58 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Maria"]
+position = Vector2( 2, -16 )
+rotation = 0.00755367
+scale = Vector2( 0.307512, 0.307512 )
+texture = ExtResource( 39 )
+
+[node name="Mark" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 3739, 268 )
+_nick = ExtResource( 62 )
+_stelios = ExtResource( 60 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Mark"]
+position = Vector2( 2, -16 )
+rotation = 0.00755367
+scale = Vector2( 0.179339, 0.179339 )
+texture = ExtResource( 40 )
+
+[node name="Max" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 4055, 268 )
+_nick = ExtResource( 63 )
+_stelios = ExtResource( 63 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Max"]
+position = Vector2( 2, -16 )
+rotation = 0.00755367
+scale = Vector2( 0.179339, 0.179339 )
+texture = ExtResource( 41 )
+
+[node name="Mercedes" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 4412, 268 )
+_nick = ExtResource( 56 )
+_stelios = ExtResource( 55 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Mercedes"]
+position = Vector2( 2, -24 )
+rotation = 0.00755367
+scale = Vector2( 0.270115, 0.270115 )
+texture = ExtResource( 42 )
+
+[node name="Level" type="Node2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 5 )
