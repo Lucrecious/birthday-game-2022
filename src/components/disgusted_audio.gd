@@ -2,6 +2,7 @@ extends AudioStreamPlayer
 
 const DisgustedStelios := [
 	preload('res://assets/sounds/disgusted_stelios.wav'),
+	preload('res://assets/sounds/whathappened.wav')
 ]
 
 const DisgustedNick := [

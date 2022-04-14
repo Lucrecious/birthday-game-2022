@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/michelle_stelios.wav-250a9ac6bca23669ef8e3ffa6fe449bc.sample"
+
+[deps]
+
+source_file="res://assets/hbd_voice_overs/michelle_stelios.wav"
+dest_files=[ "res://.import/michelle_stelios.wav-250a9ac6bca23669ef8e3ffa6fe449bc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

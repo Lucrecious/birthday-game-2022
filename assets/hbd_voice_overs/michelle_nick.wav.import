@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/michelle_nick.wav-b3d80ac31d0e174238d73215bf99d9e7.sample"
+
+[deps]
+
+source_file="res://assets/hbd_voice_overs/michelle_nick.wav"
+dest_files=[ "res://.import/michelle_nick.wav-b3d80ac31d0e174238d73215bf99d9e7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

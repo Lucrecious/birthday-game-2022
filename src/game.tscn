@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://lut/components/extents.gd" type="Script" id=1]
 [ext_resource path="res://src/player.tscn" type="PackedScene" id=2]
@@ -65,6 +65,16 @@
 [ext_resource path="res://assets/hbd_voice_overs/max_nickstelios.wav" type="AudioStream" id=63]
 [ext_resource path="res://assets/hbd_voice_overs/jeff_nick.wav" type="AudioStream" id=64]
 [ext_resource path="res://assets/hbd_voice_overs/jeff_stelios.wav" type="AudioStream" id=65]
+[ext_resource path="res://assets/heads/michelle.png" type="Texture" id=66]
+[ext_resource path="res://assets/hbd_voice_overs/michelle_stelios.wav" type="AudioStream" id=67]
+[ext_resource path="res://assets/heads/david.png" type="Texture" id=68]
+[ext_resource path="res://assets/hbd_voice_overs/david_nick.wav" type="AudioStream" id=69]
+[ext_resource path="res://assets/hbd_voice_overs/michelle_nick.wav" type="AudioStream" id=70]
+[ext_resource path="res://assets/hbd_voice_overs/david_stelios.wav" type="AudioStream" id=71]
+[ext_resource path="res://assets/heads/snoopdogg.png" type="Texture" id=72]
+[ext_resource path="res://assets/heads/rickross.png" type="Texture" id=73]
+[ext_resource path="res://assets/hbd_voice_overs/anish_nick_rickross.wav" type="AudioStream" id=74]
+[ext_resource path="res://assets/hbd_voice_overs/anish_stelios_snoop.wav" type="AudioStream" id=75]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -578,7 +588,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=10]
 resource_name = "level4"
-length = 90.0
+length = 80.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("BirthdayDudes:position")
 tracks/0/interp = 1
@@ -586,10 +596,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 90 ),
+"times": PoolRealArray( 0, 80 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 557, 12 ), Vector2( -4747, 12 ) ]
+"values": [ Vector2( 557, 12 ), Vector2( -5601, 12 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Music:volume_db")
@@ -601,7 +611,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -7.0 ]
+"values": [ -15.0 ]
 }
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -703,6 +713,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 448, 207 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 9 )
@@ -884,8 +897,9 @@ type = 1
 points = 69
 
 [node name="Sprite" type="Sprite" parent="LevelGenerator/Kraken"]
-position = Vector2( 0, 6 )
-scale = Vector2( 0.410093, 0.410093 )
+position = Vector2( -5, -7 )
+rotation = -0.816185
+scale = Vector2( 0.273165, 0.273165 )
 texture = ExtResource( 20 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
@@ -911,8 +925,35 @@ position = Vector2( 125, 292 )
 position = Vector2( 557, 12 )
 script = ExtResource( 30 )
 
+[node name="RickrossSnoop" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 495, 270 )
+_nick = ExtResource( 74 )
+_stelios = ExtResource( 75 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/RickrossSnoop"]
+position = Vector2( -1, -22 )
+rotation = 0.0921867
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 73 )
+
+[node name="Head2" type="Sprite" parent="BirthdayDudes/RickrossSnoop"]
+position = Vector2( 3, -21 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 72 )
+
+[node name="Anish" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 1279, 270 )
+_nick = ExtResource( 53 )
+_stelios = ExtResource( 51 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Anish"]
+position = Vector2( -1, -20 )
+rotation = 0.00755367
+scale = Vector2( 0.180416, 0.180416 )
+texture = ExtResource( 33 )
+
 [node name="Justin" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 432, 270 )
+position = Vector2( 2657, 270 )
 _nick = ExtResource( 28 )
 _stelios = ExtResource( 29 )
 
@@ -924,7 +965,7 @@ texture = ExtResource( 27 )
 flip_h = true
 
 [node name="Abu" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 748, 270 )
+position = Vector2( 2822, 270 )
 _nick = ExtResource( 50 )
 _stelios = ExtResource( 44 )
 
@@ -936,7 +977,7 @@ texture = ExtResource( 31 )
 flip_h = true
 
 [node name="Angela" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 1034, 270 )
+position = Vector2( 3013, 270 )
 _nick = ExtResource( 46 )
 _stelios = ExtResource( 47 )
 
@@ -947,19 +988,8 @@ scale = Vector2( 0.288038, 0.288038 )
 texture = ExtResource( 32 )
 flip_h = true
 
-[node name="Anish" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 1283, 270 )
-_nick = ExtResource( 53 )
-_stelios = ExtResource( 51 )
-
-[node name="Head" type="Sprite" parent="BirthdayDudes/Anish"]
-position = Vector2( -1, -20 )
-rotation = 0.00755367
-scale = Vector2( 0.180416, 0.180416 )
-texture = ExtResource( 33 )
-
 [node name="Elias" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 2404, 270 )
+position = Vector2( 3176, 270 )
 _nick = ExtResource( 54 )
 _stelios = ExtResource( 52 )
 
@@ -970,7 +1000,7 @@ scale = Vector2( 0.180416, 0.180416 )
 texture = ExtResource( 35 )
 
 [node name="Emmy" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 2622, 270 )
+position = Vector2( 3316, 270 )
 _nick = ExtResource( 45 )
 _stelios = ExtResource( 48 )
 
@@ -981,7 +1011,7 @@ scale = Vector2( 0.130469, 0.130469 )
 texture = ExtResource( 34 )
 
 [node name="Irene" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 2845, 270 )
+position = Vector2( 3461, 270 )
 _nick = ExtResource( 49 )
 _stelios = ExtResource( 43 )
 
@@ -992,7 +1022,7 @@ scale = Vector2( 0.236904, 0.236904 )
 texture = ExtResource( 36 )
 
 [node name="Jake" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 3047, 268 )
+position = Vector2( 3590, 268 )
 _nick = ExtResource( 57 )
 _stelios = ExtResource( 61 )
 
@@ -1003,7 +1033,7 @@ scale = Vector2( 0.271705, 0.271705 )
 texture = ExtResource( 37 )
 
 [node name="Jeff" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 3265, 268 )
+position = Vector2( 3728, 268 )
 _nick = ExtResource( 64 )
 _stelios = ExtResource( 65 )
 
@@ -1014,7 +1044,7 @@ scale = Vector2( 0.164874, 0.164874 )
 texture = ExtResource( 38 )
 
 [node name="Maria" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 3492, 268 )
+position = Vector2( 3860, 268 )
 _nick = ExtResource( 59 )
 _stelios = ExtResource( 58 )
 
@@ -1025,7 +1055,7 @@ scale = Vector2( 0.307512, 0.307512 )
 texture = ExtResource( 39 )
 
 [node name="Mark" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 3739, 268 )
+position = Vector2( 4002, 268 )
 _nick = ExtResource( 62 )
 _stelios = ExtResource( 60 )
 
@@ -1036,7 +1066,7 @@ scale = Vector2( 0.179339, 0.179339 )
 texture = ExtResource( 40 )
 
 [node name="Max" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 4055, 268 )
+position = Vector2( 4431, 268 )
 _nick = ExtResource( 63 )
 _stelios = ExtResource( 63 )
 
@@ -1047,7 +1077,7 @@ scale = Vector2( 0.179339, 0.179339 )
 texture = ExtResource( 41 )
 
 [node name="Mercedes" parent="BirthdayDudes" instance=ExtResource( 26 )]
-position = Vector2( 4412, 268 )
+position = Vector2( 4920, 268 )
 _nick = ExtResource( 56 )
 _stelios = ExtResource( 55 )
 
@@ -1056,6 +1086,28 @@ position = Vector2( 2, -24 )
 rotation = 0.00755367
 scale = Vector2( 0.270115, 0.270115 )
 texture = ExtResource( 42 )
+
+[node name="Michelle" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 5073, 268 )
+_nick = ExtResource( 70 )
+_stelios = ExtResource( 67 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/Michelle"]
+position = Vector2( 2, -24 )
+rotation = 0.00755367
+scale = Vector2( 0.270115, 0.270115 )
+texture = ExtResource( 66 )
+
+[node name="David" parent="BirthdayDudes" instance=ExtResource( 26 )]
+position = Vector2( 5233, 268 )
+_nick = ExtResource( 69 )
+_stelios = ExtResource( 71 )
+
+[node name="Head" type="Sprite" parent="BirthdayDudes/David"]
+position = Vector2( 6.00195, -21.9999 )
+rotation = 0.00755367
+scale = Vector2( 0.188523, 0.188523 )
+texture = ExtResource( 68 )
 
 [node name="Level" type="Node2D" parent="."]
 
@@ -1152,3 +1204,9 @@ __meta__ = {
 autoplay = "fade_in"
 anims/RESET = SubResource( 8 )
 anims/fade_in = SubResource( 9 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+shape = SubResource( 11 )
+shape_visible = false
+action = "jump"
+visibility_mode = 1
