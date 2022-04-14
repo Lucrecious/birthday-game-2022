@@ -55,7 +55,7 @@ func _on_jump_just_pressed() -> void:
 	_music.play()
 	
 	yield(get_tree().create_timer(1.0), 'timeout')
-	_level_animations.play('level1')
+	_level_animations.play('level4')
 	
 	emit_signal('started')
 
