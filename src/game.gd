@@ -59,8 +59,12 @@ func _on_jump_just_pressed() -> void:
 	
 	emit_signal('started')
 
+var _do_evil_laugh := true
 func _on_player_scored(type: int, points: int) -> void:
 	if type == PickUpItem.Type.Alcohol:
+		if _do_evil_laugh:
+			_do_evil_laugh = false
+			$EvilLaugh.play()
 		emit_signal('drank_alcohol')
 	
 	total_points += points

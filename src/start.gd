@@ -13,7 +13,7 @@ onready var _countdown_center := $Background/Margin/Control/Center as Control
 
 onready var _fade_out := $FadeOut as ColorRect
 
-onready var _start_timer := NodE.add_child(self, TimEr.one_shot(5.0, self, '_on_start_timeout')) as Timer
+onready var _start_timer := NodE.add_child(self, TimEr.one_shot(2.9, self, '_on_start_timeout')) as Timer
 onready var _tween := NodE.add_child(self, Tween.new()) as Tween
 
 func _ready() -> void:

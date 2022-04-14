@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://lut/components/extents.gd" type="Script" id=1]
 [ext_resource path="res://src/player.tscn" type="PackedScene" id=2]
@@ -75,6 +75,9 @@
 [ext_resource path="res://assets/heads/rickross.png" type="Texture" id=73]
 [ext_resource path="res://assets/hbd_voice_overs/anish_nick_rickross.wav" type="AudioStream" id=74]
 [ext_resource path="res://assets/hbd_voice_overs/anish_stelios_snoop.wav" type="AudioStream" id=75]
+[ext_resource path="res://assets/sounds/youre_late.wav" type="AudioStream" id=76]
+[ext_resource path="res://assets/sounds/evil_laugh.wav" type="AudioStream" id=77]
+[ext_resource path="res://assets/sounds/welcome_to_hell.wav" type="AudioStream" id=78]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -258,6 +261,42 @@ tracks/14/keys = {
 "update": 0,
 "values": [ -7.0 ]
 }
+tracks/15/type = "value"
+tracks/15/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:percent_visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:text")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Level 1" ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "level1"
@@ -374,6 +413,42 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:percent_visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 4, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0, 1.0, 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "", "Level 1" ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.7, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -492,6 +567,42 @@ tracks/8/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "", "Level 2" ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:percent_visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 4, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0, 1.0, 0.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.7, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "level3"
@@ -585,6 +696,42 @@ tracks/6/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "", "Final Level" ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:percent_visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 4, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0, 1.0, 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.8, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "level4"
@@ -612,6 +759,56 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ -15.0 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("WelcomeToHell")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "", "Party Time!!" ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:percent_visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 4, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0, 1.0, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.8, 4.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
 }
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -729,6 +926,16 @@ _birthday_dudes_path = NodePath("BirthdayDudes")
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
 volume_db = -7.0
+
+[node name="YoureLate" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 76 )
+autoplay = true
+
+[node name="EvilLaugh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 77 )
+
+[node name="WelcomeToHell" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 78 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -61.0
@@ -1170,6 +1377,7 @@ __meta__ = {
 [node name="Center" type="CenterContainer" parent="CanvasLayer/Margin/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -146.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1177,10 +1385,21 @@ __meta__ = {
 
 [node name="Tutorial" type="Label" parent="CanvasLayer/Margin/Control/Center"]
 margin_left = 168.0
-margin_top = 173.0
+margin_top = 49.0
 margin_right = 688.0
-margin_bottom = 221.0
-text = "Click, Touch or X to Jump"
+margin_bottom = 199.0
+text = "You're late!
+Get to your party!
+Click, Touch or X to Jump"
+
+[node name="LevelPrompts" type="Label" parent="CanvasLayer/Margin/Control/Center"]
+visible = false
+margin_left = 296.0
+margin_top = 100.0
+margin_right = 560.0
+margin_bottom = 148.0
+text = "Level 1"
+percent_visible = 0.0
 
 [node name="DrunkShader" type="ColorRect" parent="CanvasLayer"]
 material = SubResource( 7 )

@@ -345,7 +345,7 @@ _stelios_sprite_path = NodePath("RootSprite/Sprite/HeadPosition/SteliosHead")
 
 [node name="Footstep" type="AudioStreamPlayer" parent="."]
 stream = SubResource( 22 )
-volume_db = -5.0
+volume_db = -9.0
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 stream = SubResource( 21 )

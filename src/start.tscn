@@ -2,8 +2,8 @@
 
 [ext_resource path="res://assets/ui/theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/start.gd" type="Script" id=2]
-[ext_resource path="res://assets/heads/nick.png" type="Texture" id=3]
-[ext_resource path="res://assets/heads/stelios1.png" type="Texture" id=4]
+[ext_resource path="res://assets/heads/stelios_start.png" type="Texture" id=3]
+[ext_resource path="res://assets/heads/nick_start.png" type="Texture" id=4]
 
 [node name="Start" type="Node"]
 script = ExtResource( 2 )
@@ -63,14 +63,14 @@ margin_bottom = 48.0
 text = "Stelios"
 
 [node name="Nick" type="Sprite" parent="Background/Margin/Control"]
-position = Vector2( 56, 178 )
+position = Vector2( 56, 166 )
 scale = Vector2( 0.35307, 0.35307 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Stelios" type="Sprite" parent="Background/Margin/Control"]
-position = Vector2( 669, 180 )
-scale = Vector2( 0.511086, 0.511086 )
-texture = ExtResource( 4 )
+position = Vector2( 663, 166.148 )
+scale = Vector2( 0.452822, 0.452822 )
+texture = ExtResource( 3 )
 
 [node name="Center" type="CenterContainer" parent="Background/Margin/Control"]
 anchor_right = 1.0
