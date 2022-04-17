@@ -28,6 +28,13 @@ onready var _birthday_dudes := NodE.get_node_with_error(self, _birthday_dudes_pa
 
 var total_points := 0
 
+var StartScene = load('res://src/start.tscn')
+
+func to_start() -> void:
+	get_tree().root.add_child(StartScene.instance())
+	get_parent().remove_child(self)
+	queue_free()
+
 func _ready() -> void:
 	_player.set_mode(mode)
 	
@@ -55,7 +62,7 @@ func _on_jump_just_pressed() -> void:
 	_music.play()
 	
 	yield(get_tree().create_timer(1.0), 'timeout')
-	_level_animations.play('level4')
+	_level_animations.play('level1')
 	
 	emit_signal('started')
 

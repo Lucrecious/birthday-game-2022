@@ -301,6 +301,30 @@ tracks/17/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/18/type = "value"
+tracks/18/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:visible_characters")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("CanvasLayer/FadeIn:modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "level1"
@@ -759,10 +783,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 75, 80 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ -15.0 ]
+"values": [ -15.0, -15.0, -80.0 ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath("WelcomeToHell")
@@ -813,6 +837,44 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CanvasLayer/Margin/Control/Center/LevelPrompts:visible_characters")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("CanvasLayer/FadeIn:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 75, 80 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 80 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "to_start"
+} ]
 }
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -1567,9 +1629,9 @@ Click, Touch or X to Jump"
 
 [node name="LevelPrompts" type="Label" parent="CanvasLayer/Margin/Control/Center"]
 visible = false
-margin_left = 352.0
+margin_left = 428.0
 margin_top = 100.0
-margin_right = 504.0
+margin_right = 428.0
 margin_bottom = 148.0
 text = "Level 1"
 percent_visible = 0.0
